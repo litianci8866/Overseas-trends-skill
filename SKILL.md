@@ -28,13 +28,13 @@ description: 海外社媒热榜周报生成器。每周抓取 TikTok、Instagram
 
 **读取上期周报（用于跨期去重）**：
 
-检查输出目录 `C:\Users\litianci\.claude\skills\overseas-trends\output\` 是否存在上期文件（按文件名日期排序取最新一期）：
+检查输出目录 `C:\Users\litianci\.claude\skills\overseas-trends\output\` 是否存在历史文件，读取**最近 2 期**（防止隔期重复收录）：
 
 ```bash
-ls C:\Users\litianci\.claude\skills\overseas-trends\output\ | sort -r | head -1
+ls C:\Users\litianci\.claude\skills\overseas-trends\output\ | sort -r | head -2
 ```
 
-若存在，用 Read 工具读取，提取其中已收录的所有热点名称，构建「已收录清单」，后续抓取时对照去重。若目录不存在或无文件，跳过此步。
+若存在，用 Read 工具逐一读取，提取其中已收录的所有热点名称，合并构建「已收录清单」，后续抓取时对照去重。若目录不存在或无文件，跳过此步。
 
 ### 第二步：按平台分类抓取
 
@@ -110,7 +110,7 @@ ls C:\Users\litianci\.claude\skills\overseas-trends\output\ | sort -r | head -1
 ### 第三步：交叉验证与去重
 
 - 同一内容在多平台传播，合并为一条，标注「跨平台」
-- Trends MCP `get_growth` 交叉验证热度增长（source=tiktok / google search）
+- Trends MCP `get_growth` 交叉验证热度增长（source=tiktok / google search）：**7D 增长 > 30% 视为热度上升确认；低于此或无数据则依赖多源搜索结果综合判断**
 - 7 天内无新高峰、已明显降温的内容不收录
 - 每条内容必须有：名称、平台来源、走红原因、传播形态、可验证链接（至少 1 条直链）
 

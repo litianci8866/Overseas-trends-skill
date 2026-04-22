@@ -15,9 +15,9 @@
 
 | 项目 | 内容 |
 |------|------|
-| 美国热搜 | https://trends24.in/united-states/ |
-| 英国热搜 | https://trends24.in/united-kingdom/ |
-| 抓取方式 | WebFetch 直接抓取（trends24.in 可用） |
+| 美国热搜 | WebSearch：`Twitter trending United States this week {日期范围}` |
+| 英国热搜 | WebSearch：`Twitter trending United Kingdom this week {日期范围}` |
+| 抓取方式 | WebSearch 为主（trends24.in 等聚合榜单禁止放入输出，仅供内部参考） |
 | 补充搜索 | `Twitter trending topics this week {日期范围}` |
 | 定位 | 实时热搜话题、出圈讨论、大规模转推事件 |
 | 筛选标准 | 热搜维持 6 小时以上，或转推量 > 5万 |
@@ -39,10 +39,12 @@
 
 | 项目 | 内容 |
 |------|------|
-| 抓取方式 | WebSearch（Instagram 不开放直接抓取） |
+| 抓取方式 | WebSearch + 固定参考网站（Instagram 不开放直接抓取） |
+| 固定参考1 | WebFetch：`https://napoleoncat.com/blog/instagram-reels-trends/`（每月更新趋势追踪） |
+| 固定参考2 | WebFetch：`https://newengen.com/insights/instagram-trends/`（平台趋势分析） |
 | 热门 Reels 搜索 | `Instagram Reels trending {日期范围}` |
 | 热门话题标签 | `Instagram trending hashtag {日期范围}` |
-| Trends MCP | source=google search，追踪 `instagram trend [话题]` 搜索增长 |
+| Trends MCP | source=google search，追踪 `instagram trend [话题]` 搜索增长；7D 增长 > 30% 视为热度上升确认 |
 | 定位 | 热门 Reels 格式、视觉美学趋势、爆款话题标签 |
 | 筛选标准 | Reel 播放量 > 100万，或话题标签本周新增帖子量显著飙升 |
 
@@ -77,6 +79,7 @@
 | 网站 | 用途 |
 |------|------|
 | https://knowyourmeme.com/memes/recent | 近期新梗追踪，最可靠的梗数据库 |
-| https://trends24.in/united-states/ | Twitter/X 美国热搜历史记录 |
 | https://www.reddit.com/r/all/top/?t=week | Reddit 全站周榜 |
 | https://charts.spotify.com/charts/overview/global | Spotify 全球歌曲榜（TikTok 音乐交叉验证）|
+| https://napoleoncat.com/blog/instagram-reels-trends/ | Instagram Reels 月度趋势追踪 |
+| https://newengen.com/insights/instagram-trends/ | Instagram 平台趋势分析 |
