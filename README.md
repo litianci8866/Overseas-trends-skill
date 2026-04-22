@@ -11,7 +11,13 @@
 
 一个为**游戏行业运营、品牌人、内容创作者**设计的 Claude Code Skill。
 
-每周自动抓取 TikTok、Twitter/X、Reddit、Instagram 上的爆款音乐、流行梗、病毒式挑战，整理成结构化周报，发送到飞书。特别附带「**游戏官号可蹭热点速查**」板块，帮你找到最适合游戏账号追梗的内容。
+想要追上海外热梗但又苦于IP问题没法天天刷到本地爆款？社媒API付费和接入问题让监测成本大大增加？
+
+本skill每周自动抓取 TikTok、Twitter/X、Reddit、Instagram 上的爆款音乐、流行梗、病毒式挑战
+使用Trends MCP，每月100免费额度，快乐收集热点！
+
+最后AI还会特别附带「**游戏官号可蹭热点速查**」板块，帮你找到最适合游戏账号追梗的内容，整理成结构化周报，一键发送到飞书。
+
 
 **覆盖平台：** TikTok · Twitter/X · Reddit · Instagram · Facebook · Discord
 
@@ -89,7 +95,7 @@ mkdir -p ~/.claude/skills/overseas-trends/output
 
 **第四步（可选）：接入 Trends MCP**
 
-Trends MCP 可提供 12 个平台的实时热度数据，大幅提升热点验证准确性。免费 100 次/天。
+Trends MCP 可提供 12 个平台的实时热度数据，大幅提升热点验证准确性。免费 100 次/月。
 
 ```bash
 # 先在 trendsmcp.ai 注册获取 API Key
